@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_50dp">50dp</dimen>
+    <dimen name="padding_30dp">30dp</dimen>
+    <dimen name="padding_20dp">20dp</dimen>
+    <dimen name="medium_text_size">16sp</dimen>
+    <dimen name="padding_8dp">8dp</dimen>
+    <dimen name="padding">10dp</dimen>
+    <dimen name="margin">20dp</dimen>
+</resources>
