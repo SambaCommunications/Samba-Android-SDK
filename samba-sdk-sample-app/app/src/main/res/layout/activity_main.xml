@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:background="@color/colorLightGreen"
         android:orientation="vertical"
-        tools:context="samba.samba_demo.MainActivity">
+        tools:context="samba.demo.MainActivity">
 
         <ImageView
             android:id="@+id/logo_image"

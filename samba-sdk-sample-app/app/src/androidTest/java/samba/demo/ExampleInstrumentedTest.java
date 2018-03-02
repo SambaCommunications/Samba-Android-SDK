@@ -1,4 +1,4 @@
-package samba.samba_demo;
+package samba.demo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

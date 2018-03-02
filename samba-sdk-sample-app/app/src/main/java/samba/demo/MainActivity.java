@@ -1,4 +1,4 @@
-package samba.samba_demo;
+package samba.demo;
 
 import android.os.Bundle;
 import android.os.Handler;

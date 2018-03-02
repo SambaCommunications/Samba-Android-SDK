@@ -1,4 +1,4 @@
-package samba.samba_demo;
+package samba.demo;
 
 import org.junit.Test;
 
