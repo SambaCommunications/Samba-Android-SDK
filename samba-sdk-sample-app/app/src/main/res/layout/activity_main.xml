@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorLightGreen"
+        android:orientation="vertical"
+        tools:context="samba.demo.MainActivity">
+
+        <ImageView
+            android:id="@+id/logo_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/padding_50dp"
+            android:layout_marginTop="@dimen/padding_50dp"
+            android:src="@drawable/samba_logo" />
+
+        <View
+            android:id="@+id/top_line_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/logo_image"
+            android:background="@color/lighter_gray" />
+
+        <LinearLayout
+            android:id="@+id/init_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/top_line_view"
+            android:orientation="vertical"
+            android:padding="@dimen/margin">
+
+            <TextView
+                android:id="@+id/publisher_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/medium_text_size"
+                tools:text="Publisher id:27" />
+
+            <TextView
+                android:id="@+id/secret_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/medium_text_size"
+                tools:text="Secret key:27" />
+
+            <Button
+                android:id="@+id/init_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin"
+                android:paddingEnd="@dimen/padding_50dp"
+                android:paddingStart="@dimen/padding_50dp"
+                android:text="@string/action_init" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/second_line_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/init_layout"
+            android:background="@color/lighter_gray" />
+
+        <RelativeLayout
+            android:id="@+id/load_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/init_layout"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding">
+
+            <Button
+                android:id="@+id/load_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/padding"
+                android:enabled="false"
+                android:paddingEnd="@dimen/padding_50dp"
+                android:paddingStart="@dimen/padding_50dp"
+                android:text="@string/action_load"
+                tools:text="LOAD" />
+
+            <Button
+                android:id="@+id/show_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/padding"
+                android:layout_toEndOf="@+id/load_btn"
+                android:enabled="false"
+                android:paddingEnd="@dimen/padding_50dp"
+                android:paddingStart="@dimen/padding_50dp"
+                android:text="@string/action_show"
+                tools:text="SHOW" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/third_line_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/load_layout"
+            android:background="@color/lighter_gray" />
+
+        <Switch
+            android:id="@+id/optimize_download_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/third_line_view"
+            android:paddingStart="@dimen/padding_8dp"
+            android:paddingEnd="@dimen/padding_8dp"
+            android:paddingTop="@dimen/padding_8dp"
+            android:text="@string/action_optimize_download"
+            android:textColor="@color/colorGrey"
+            android:textSize="@dimen/medium_text_size" />
+
+        <Switch
+            android:id="@+id/disable_sound_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/optimize_download_switch"
+            android:paddingStart="@dimen/padding_8dp"
+            android:paddingEnd="@dimen/padding_8dp"
+            android:paddingTop="@dimen/padding_8dp"
+            android:text="@string/action_disable_sound"
+            android:textColor="@color/colorGrey"
+            android:textSize="@dimen/medium_text_size"
+            android:layout_marginBottom="@dimen/padding_50dp"/>
+
+    </RelativeLayout>
+</ScrollView>
