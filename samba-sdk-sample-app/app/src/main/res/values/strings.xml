@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">DemoApp</string>
+    <string name="app_name">Samba SDK Demo App</string>
     <string name="action_init">Init</string>
     <string name="action_load">Load</string>
     <string name="action_show">Show</string>
     <string name="action_optimize_download">Optimize download on mobile network</string>
     <string name="action_disable_sound">Disable video sound at start</string>
-    <string name="text_secret_key"> Secret key: %s</string>
+    <string name="text_secret_key">Secret key: %s</string>
     <string name="text_publisher_id">Publisher id: %s</string>
 </resources>

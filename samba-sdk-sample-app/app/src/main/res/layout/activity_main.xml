@@ -6,7 +6,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/colorLightGreen"
         android:orientation="vertical"
         tools:context="samba.demo.MainActivity">
@@ -124,6 +124,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/third_line_view"
             android:paddingStart="@dimen/padding_8dp"
+            android:paddingEnd="@dimen/padding_8dp"
             android:paddingTop="@dimen/padding_8dp"
             android:text="@string/action_optimize_download"
             android:textColor="@color/colorGrey"
@@ -135,6 +136,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/optimize_download_switch"
             android:paddingStart="@dimen/padding_8dp"
+            android:paddingEnd="@dimen/padding_8dp"
             android:paddingTop="@dimen/padding_8dp"
             android:text="@string/action_disable_sound"
             android:textColor="@color/colorGrey"
