@@ -135,7 +135,7 @@ protected void onDestroy() {
 
 ## AdListener events
 
-Above is an example of creating a SambaEventListener object and registering it to the Samba Ad object. Folowing events are triggered:
+Above is an example of creating a **SambaEventListener** object and registering it to the Samba Ad object. Folowing events are triggered:
 
 |**Event**|**Mandatory implementation**|**Description**|
 |---------|----------------------------|---------------|
