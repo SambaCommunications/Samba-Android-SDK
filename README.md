@@ -24,6 +24,7 @@ dependencies {
 
 In order to properly initialize Samba sdk, you have to call init method either in the Application class or in the first activity. 
 
+
 ```
 import android.app.Application;
 import com.samba.SambaAd;
@@ -45,6 +46,7 @@ Every time a new publisher, secret or user id is used, init method must be calle
 ## Samba config 
 
 The SDK offers access to **SambaConfig** class in order to change various SDK settings. This method can be called before or after calling ```init``` method. The settings will be applied before loading and playing ads.
+The values for **publisherId**, **secretKey** and **userId** will be provided by Samba.
 
 ```
 import com.samba.SambaConfig;
