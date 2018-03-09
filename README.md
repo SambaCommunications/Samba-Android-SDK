@@ -40,7 +40,7 @@ public class App extends Application {
 }
 ```
 
-Note: If you call the ```init``` method with an incorrect **publisherId**, **secretKey** or **userId** ,the Samba SDK will initialize, but when calling ```loadAd()``` ,the **onAdLoadFail()** event will probably be fired with the error message **No content**.
+Note: If you call the ```init``` method with an incorrect **publisherId**, **secretKey** or **userId**, the Samba SDK will initialize, but when calling ```loadAd()```, the **onAdLoadFail()** event will probably be fired with the error message **No content**.
 
 Each time a new publisherId, secretKey or userId is used, the init method must be called in order to ensure the correct setup.
 
@@ -55,13 +55,13 @@ public class MainActivity extends AppCompatActivity {
 
  @Override
  protected void onCreate(Bundle savedInstanceState) {
- super.onCreate(savedInstanceState);
- setContentView(R.layout.activity_main);
+   super.onCreate(savedInstanceState);
+   setContentView(R.layout.activity_main);
 
-SambaConfig.useMobileNetworkForCaching(false);
-SambaConfig.setPrecachingAllowed(false);
-SambaConfig.setSoundDisabled(false);
-}
+   SambaConfig.useMobileNetworkForCaching(false);
+   SambaConfig.setPrecachingAllowed(false);
+   SambaConfig.setSoundDisabled(false);
+  }
 }
 ```
 Following configurations are available:
@@ -95,12 +95,12 @@ private Samba mSamba;
 
  @Override
  protected void onCreate(Bundle savedInstanceState) {
- super.onCreate(savedInstanceState);
- setContentView(R.layout.activity_main);
+   super.onCreate(savedInstanceState);
+   setContentView(R.layout.activity_main);
   
- mSamba=SambaAd.getInstance(FirstActivity.this);
- mSamba.setSambaAdListener(createSambaListener());
- mSamba.loadAd();
+   mSamba=SambaAd.getInstance(FirstActivity.this);
+   mSamba.setSambaAdListener(createSambaListener());
+   mSamba.loadAd();
  }
 
 private SambaListener createSambaListener() {
