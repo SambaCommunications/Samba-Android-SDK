@@ -77,7 +77,7 @@ The following configurations are available:
 
 ### Sample ad activity
 
-You are almost ready to play the first Ad.
+You are almost ready to play the first ad.
 Get the Samba instance by calling method ```getInstance``` in Samba class and passing the activity context.
 ```
  mSamba=SambaAd.getInstance(FirstActivity.this);
@@ -142,7 +142,7 @@ protected void onDestroy() {
 
 ### AdListener events
 
-Above is an example of creating a **SambaEventListener** object and registering it to the Samba Ad object. The following events are triggered:
+Above is an example of creating a **SambaEventListener** object and registering it to the SambaAd object. The following events are triggered:
 
 |**Event**|**Mandatory implementation**|**Description**|
 |---------|----------------------------|---------------|
