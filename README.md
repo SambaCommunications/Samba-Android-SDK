@@ -21,7 +21,7 @@ dependencies {
 
 ## Let's code
 
-In order to connect to our system you will need a PublisherId and a SecretKey. Please contact your SambaNetworks Account Manager or contact us at sales@sambanetworks.com in order to receive these. 
+In order to connect to our system you will need a publisherId and a secretKey. Please contact your SambaNetworks Account Manager or contact us at sales@sambanetworks.com in order to receive these. 
 
 To properly initialize the Samba SDK, you need to call the init method either in the Application class or in the first activity. 
 
@@ -40,9 +40,9 @@ public class App extends Application {
 }
 ```
 
-Note: If you call the ```init``` method with an incorrect **publisherId**, **secretKey** or **userId** ,the Samba SDK will initialize, but when calling ```loadAd()``` , **onAdLoadFail()** event will probably be fired with error message **No content**.
+Note: If you call the ```init``` method with an incorrect **publisherId**, **secretKey** or **userId** ,the Samba SDK will initialize, but when calling ```loadAd()``` ,the **onAdLoadFail()** event will probably be fired with the error message **No content**.
 
-Each time a new publisher, secret or user id is used, init method must be called in order to retain the new setup.
+Each time a new publisherId, secretKey or userId is used, the init method must be called in order to ensure the correct setup.
 
 ### Samba configuration 
 
@@ -64,15 +64,15 @@ SambaConfig.setSoundDisabled(false);
 }
 }
 ```
-Following configurations are availble:
+Following configurations are available:
 
 |Method	| Default value |                 	Description                                     |
 |---------|---------------|------------------------------------------------------------------|
 |setAge   |	      null    	 |Sets the age used to retrieve Samba content. (optional parameter).|
 |setGender|	null	|Sets the gender user to retrieve Samba content.  Available options are: 'M' or 'F'.(optional parameter)|
 |setAdOrientation|	null	|Sets the desired orientation when playing the ad. In case the value is null or MATCH_VIDEO, the orientation will be the one preferred by the video. Available options are: LANDSCAPE, PORTRAIT, AUTO or MATCH_VIDEO.|
-|setSoundDisabled |	false |	Sets the video volume as enabled. If set to true value can be changed when playing the video by pressing the icon in the above left corner |
-|optimizeDownloadOnMobileNetwork|	false |	Sets whether ht mobile network should be used for downloading ad videos.|
+|setSoundDisabled |	false | Sets whether or not the ad is played with sound. The default option for sound is enabled.|
+|optimizeDownloadOnMobileNetwork|	false |	Sets whether the mobile network should be used for downloading ad videos.|
 
 
 ### Sample ad activity
@@ -130,7 +130,7 @@ samba.isAdReady()
 samba.isAdShowing()
 
 ### OnDestroy
-In order to cleanup the ad's resources, Samba's ```destroyAd()``` method must be called when the activity is destroyied:
+In order to clean-up the ad's resources, Samba's ```destroyAd()``` method must be called when the activity is destroyied:
 
 ```
 @Override
@@ -154,7 +154,7 @@ Above is an example of creating a **SambaEventListener** object and registering 
 |onAdClicked|	false|	Triggered when the user clicks the ad video screen.
 |onLeaveApp|	false	|Triggered when the app is about to go to the background initiated by the sdk .e.g. if the user opens a web page in native browser from SDK or click in a "mailTo" link|
 
-##3 NOTE
+### NOTE
 
 Callbacks may be executed on a background thread so in order to interact with the UI you need to move the processing on the main thread. This can be done so:
 
