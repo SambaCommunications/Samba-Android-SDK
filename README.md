@@ -44,7 +44,7 @@ Note: If you call the ```init``` method with an incorrect **publisherId**, **sec
 
 Each time a new publisher, secret or user id is used, init method must be called in order to retain the new setup.
 
-## Samba configuration 
+### Samba configuration 
 
 The SDK offers access to the **SambaConfig** class in order to change various SDK settings. This method can be called before or after calling the ```init``` method. The settings will be applied before loading and playing ads.
 The values for **publisherId**, **secretKey** and **userId** will be provided by Samba.
@@ -75,7 +75,7 @@ Following configurations are availble:
 |optimizeDownloadOnMobileNetwork|	false |	Sets whether ht mobile network should be used for downloading ad videos.|
 
 
-## Sample ad activity
+### Sample ad activity
 
 You are almost ready to play the first Ad.
 Get Samba instance by calling method ```getInstance``` in Samba class and passing the activity context.
@@ -129,7 +129,7 @@ samba.isAdReady()
 
 samba.isAdShowing()
 
-## OnDestroy
+### OnDestroy
 In order to cleanup the ad's resources, Samba's ```destroyAd()``` method must be called when the activity is destroyied:
 
 ```
@@ -140,7 +140,7 @@ protected void onDestroy() {
 }
 ```
 
-## AdListener events
+### AdListener events
 
 Above is an example of creating a **SambaEventListener** object and registering it to the Samba Ad object.The following events are triggered:
 
@@ -154,7 +154,7 @@ Above is an example of creating a **SambaEventListener** object and registering 
 |onAdClicked|	false|	Triggered when the user clicks the ad video screen.
 |onLeaveApp|	false	|Triggered when the app is about to go to the background initiated by the sdk .e.g. if the user opens a web page in native browser from SDK or click in a "mailTo" link|
 
-## NOTE
+##3 NOTE
 
 Callbacks may be executed on a background thread so in order to interact with the UI you need to move the processing on the main thread. This can be done so:
 
@@ -162,5 +162,5 @@ create a Handler object and passing Looper.getMainLooper as a parameter
 
 using Activity.runOnUiThread(Runnable) 
 
-### You're all set
+## You're all set
 Now you are ready to present high quality and engaging ads to your users! Welcome aboard!
