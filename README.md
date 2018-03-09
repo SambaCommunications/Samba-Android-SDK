@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
   }
 }
 ```
-Following configurations are available:
+The following configurations are available:
 
 |Method	| Default value |                 	Description                                     |
 |---------|---------------|------------------------------------------------------------------|
@@ -78,12 +78,12 @@ Following configurations are available:
 ### Sample ad activity
 
 You are almost ready to play the first Ad.
-Get Samba instance by calling method ```getInstance``` in Samba class and passing the activity context.
+Get the Samba instance by calling method ```getInstance``` in Samba class and passing the activity context.
 ```
  mSamba=SambaAd.getInstance(FirstActivity.this);
  ```
  
-After this you must call the ```loadAd()``` method and after receiving successful load response, call the ```playAd()``` method. You can listen to the result of the load method by registering **SambaEventListener** on the Samba instance and listening for **AdLoadedSuccess** and **AdLoadedFailed** events.
+After this you must call the ```loadAd()``` method and after receiving successful load response, call the ```playAd()``` method. You can listen to the result of the load method by registering the **SambaEventListener** on the Samba instance and listening for **AdLoadedSuccess** and **AdLoadedFailed** events.
 
 Once **AdLoadedSuccess** has been returned, you can call the ```playAd()``` method. Additional methods for returning loading status are **isAdLoaded** and **isAdLoading** which are called using the Samba instance.
 
@@ -130,7 +130,7 @@ samba.isAdReady()
 samba.isAdShowing()
 
 ### OnDestroy
-In order to clean-up the ad's resources, Samba's ```destroyAd()``` method must be called when the activity is destroyied:
+In order to clean-up the ad's resources, Samba's ```destroyAd()``` method must be called when the activity is destroyed:
 
 ```
 @Override
@@ -142,7 +142,7 @@ protected void onDestroy() {
 
 ### AdListener events
 
-Above is an example of creating a **SambaEventListener** object and registering it to the Samba Ad object.The following events are triggered:
+Above is an example of creating a **SambaEventListener** object and registering it to the Samba Ad object. The following events are triggered:
 
 |**Event**|**Mandatory implementation**|**Description**|
 |---------|----------------------------|---------------|
@@ -152,7 +152,7 @@ Above is an example of creating a **SambaEventListener** object and registering 
 |onAdShowFailed(String error)|	false	|Triggered when ad fails to display on screen. The cause error message is returned.|
 |onAdDidReachEnd|	false	|Triggered when ad video reaches end.|
 |onAdClicked|	false|	Triggered when the user clicks the ad video screen.
-|onLeaveApp|	false	|Triggered when the app is about to go to the background initiated by the sdk .e.g. if the user opens a web page in native browser from SDK or click in a "mailTo" link|
+|onLeaveApp|	false	|Triggered when the app is about to go to the background initiated by the SDK. (e.g. if the user opens a web page in native browser from SDK or click in a "mailTo" link)|
 
 ### NOTE
 
