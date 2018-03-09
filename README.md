@@ -158,7 +158,7 @@ Above is an example of creating a **SambaEventListener** object and registering 
 
 Callbacks may be executed on a background thread so in order to interact with the UI you need to move the processing on the main thread. This can be done so:
 
-create a Handler object and passing Looper.getMainLooper as parameter
+create a Handler object and passing Looper.getMainLooper as a parameter
 
 using Activity.runOnUiThread(Runnable) 
 
