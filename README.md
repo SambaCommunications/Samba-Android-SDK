@@ -146,7 +146,7 @@ Above is an example of creating a **SambaEventListener** object and registering 
 
 |**Event**|**Mandatory implementation**|**Description**|
 |---------|----------------------------|---------------|
-|onAdLoadSuccess|	true	|Triggered after an ad is loaded successfuly|
+|onAdLoadSuccess|	true	|Triggered after an ad is loaded successfully|
 |onAdLoadFail(String error)|	true	|Triggered after an ad is not loaded. The cause error message is returned.|
 |onAdStarted |false|	Triggered when ad video starts playing.|
 |onAdShowFailed(String error)|	false	|Triggered when ad fails to display on screen. The cause error message is returned.|
