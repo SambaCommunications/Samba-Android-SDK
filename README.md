@@ -19,7 +19,7 @@ dependencies {
  }
 ```
 
-## Let's code
+## Let's get to the code
 
 In order to connect to our system you will need a publisherId and a secretKey. Please contact your SambaNetworks Account Manager or contact us at sales@sambanetworks.com in order to get these. 
 
