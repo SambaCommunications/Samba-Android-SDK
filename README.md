@@ -163,4 +163,4 @@ create a Handler object and pass Looper.getMainLooper as a parameter
 using Activity.runOnUiThread(Runnable) 
 
 ## You're all set
-Now you're ready to show high quality and engaging ads to your users! Welcome aboard!
+Now you're ready to show high quality and engaging ads to your users. Welcome aboard!
