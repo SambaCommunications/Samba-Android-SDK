@@ -68,11 +68,11 @@ The following configurations are available:
 
 |Method	| Default value |                 	Description                                     |
 |---------|---------------|------------------------------------------------------------------|
-|setAge   |	      null    	 |Sets the age used to retrieve Samba content. (optional parameter).|
-|setGender|	null	|Sets the gender user to retrieve Samba content.  Available options are: 'M' or 'F'.(optional parameter)|
-|setAdOrientation|	null	|Sets the desired orientation when playing the ad. In case the value is null or MATCH_VIDEO, the orientation will be the one preferred by the video. Available options are: LANDSCAPE, PORTRAIT, AUTO or MATCH_VIDEO.|
-|setSoundDisabled |	false | Sets whether or not the ad is played with sound. The default option for sound is enabled.|
-|optimizeDownloadOnMobileNetwork|	false |	Sets whether the mobile network should be used for downloading ad videos.|
+|setAge   |	      null    	 |Sets the age used to retrieve Samba ads. (optional parameter).|
+|setGender|	null	|Sets the gender used to retrieve Samba ads.  Available options are: 'M' or 'F'.(optional parameter).|
+|setAdOrientation|	null	|Sets the desired orientation when playing the ad. If the value is null or MATCH_VIDEO, the orientation will be determined by the video itself. Available options are: LANDSCAPE, PORTRAIT, AUTO or MATCH_VIDEO.|
+|setSoundDisabled |	false | Sets the sound value (sound on or sound off). The default option for sound is enabled.|
+|optimizeDownloadOnMobileNetwork|	false |	Sets whether the mobile network should be used for downloading the video ads.|
 
 
 ### Sample ad activity
@@ -146,21 +146,21 @@ Above is an example of creating a **SambaEventListener** object and registering 
 
 |**Event**|**Mandatory implementation**|**Description**|
 |---------|----------------------------|---------------|
-|onAdLoadSuccess|	true	|Triggered after an ad is loaded successfully|
-|onAdLoadFail(String error)|	true	|Triggered after an ad is not loaded. The cause error message is returned.|
-|onAdStarted |false|	Triggered when ad video starts playing.|
-|onAdShowFailed(String error)|	false	|Triggered when ad fails to display on screen. The cause error message is returned.|
-|onAdDidReachEnd|	false	|Triggered when ad video reaches end.|
-|onAdClicked|	false|	Triggered when the user clicks the ad video screen.
-|onLeaveApp|	false	|Triggered when the app is about to go to the background initiated by the SDK. (e.g. if the user opens a web page in native browser from SDK or click in a "mailTo" link)|
+|onAdLoadSuccess|	true	|Triggered when an ad is loaded successfully|
+|onAdLoadFail(String error)|	true	|Triggered when an ad is not loaded. The cause error message is returned.|
+|onAdStarted |false|	Triggered when an ad starts playing.|
+|onAdShowFailed(String error)|	false	|Triggered when and ad fails to display on screen. The cause error message is returned.|
+|onAdDidReachEnd|	false	|Triggered when an ad reaches completion.|
+|onAdClicked|	false|	Triggered when the user clicks the video ad screen.
+|onLeaveApp|	false	|Triggered when leaving the app. (e.g. if the user opens a web page in the native browser from the SDK or clicks a "mailTo" link)|
 
 ### NOTE
 
-Callbacks may be executed on a background thread so in order to interact with the UI you need to move the processing on the main thread. This can be done so:
+Callbacks may be executed in a background thread so in order to interact with the UI you need to move the processing to the main thread. This can be done so:
 
 create a Handler object and pass Looper.getMainLooper as a parameter
 
 using Activity.runOnUiThread(Runnable) 
 
 ## You're all set
-Now you are ready to present high quality and engaging ads to your users! Welcome aboard!
+Now you're ready to show high quality and engaging ads to your users! Welcome aboard!
