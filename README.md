@@ -1,10 +1,10 @@
 ## Overview
 
-This SDK is provided as an Android Library project that can be included in your application using Gradle or as a .aar library.
+This SDK is provided as an Android Library project that can be included in your application using Gradle or as an .aar library.
 
 ## Requirements
 
-Requires Android 4.4 (Android API level 19+) and upwards. In the event you attempt to use the Samba SDK on a device with an Android OS lower than 4.4,the Samba instance will be null.
+The Samba SDK requires Android 4.4 (Android API level 19+) and upwards. In the event you attempt to use the Samba SDK on a device with an Android OS lower than 4.4,the Samba instance will be null.
 
 ## Let's get started
 
@@ -21,9 +21,9 @@ dependencies {
 
 ## Let's code
 
-In order to connect to our system you will need a publisherId and a secretKey. Please contact your SambaNetworks Account Manager or contact us at sales@sambanetworks.com in order to receive these. 
+In order to connect to our system you will need a publisherId and a secretKey. Please contact your SambaNetworks Account Manager or contact us at sales@sambanetworks.com in order to get these. 
 
-To properly initialize the Samba SDK, you need to call the init method either in the Application class or in the first activity. 
+To properly initialize the Samba SDK you need to call the init method either in the Application class or in the first activity. 
 
 
 ```
@@ -68,8 +68,8 @@ The following configurations are available:
 
 |Method	| Default value |                 	Description                                     |
 |---------|---------------|------------------------------------------------------------------|
-|setAge   |	      null    	 |Sets the age used to retrieve Samba ads. (optional parameter).|
-|setGender|	null	|Sets the gender used to retrieve Samba ads.  Available options are: 'M' or 'F'.(optional parameter).|
+|setAge   |	      null    	 |Sets the age used to retrieve Samba ads (optional parameter).|
+|setGender|	null	|Sets the gender used to retrieve Samba ads.  Available options are: 'M' or 'F' (optional parameter).|
 |setAdOrientation|	null	|Sets the desired orientation when playing the ad. If the value is null or MATCH_VIDEO, the orientation will be determined by the video itself. Available options are: LANDSCAPE, PORTRAIT, AUTO or MATCH_VIDEO.|
 |setSoundDisabled |	false | Sets the sound value (sound on or sound off). The default option for sound is enabled.|
 |optimizeDownloadOnMobileNetwork|	false |	Sets whether the mobile network should be used for downloading the video ads.|
@@ -146,10 +146,10 @@ Above is an example of creating a **SambaEventListener** object and registering 
 
 |**Event**|**Mandatory implementation**|**Description**|
 |---------|----------------------------|---------------|
-|onAdLoadSuccess|	true	|Triggered when an ad is loaded successfully|
+|onAdLoadSuccess|	true	|Triggered when an ad is loaded successfully.|
 |onAdLoadFail(String error)|	true	|Triggered when an ad is not loaded. The cause error message is returned.|
 |onAdStarted |false|	Triggered when an ad starts playing.|
-|onAdShowFailed(String error)|	false	|Triggered when and ad fails to display on screen. The cause error message is returned.|
+|onAdShowFailed(String error)|	false	|Triggered when an ad fails to display on screen. The cause error message is returned.|
 |onAdDidReachEnd|	false	|Triggered when an ad reaches completion.|
 |onAdClicked|	false|	Triggered when the user clicks the video ad screen.
 |onLeaveApp|	false	|Triggered when leaving the app. (e.g. if the user opens a web page in the native browser from the SDK or clicks a "mailTo" link)|
