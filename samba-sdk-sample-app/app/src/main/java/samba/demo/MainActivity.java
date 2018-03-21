@@ -23,10 +23,10 @@ public class MainActivity extends AppCompatActivity {
 
     private static final Handler mHandler = new Handler(Looper.getMainLooper());
     //CHANGE THIS TO THE PUBLISHER ID YOU RECEIVE FROM SAMBA
-    private static final String PUBLISHER_ID = "27";
+    private static final String PUBLISHER_ID = "YourPublisherId";
 
     //CHANGE THIS TO THE SECRET KEY YOU RECEIVE FROM SAMBA
-    private static final String SECRET_KEY = "TextMeSecretKey";
+    private static final String SECRET_KEY = "YourSecretKey";
 
     private Button mBtnLoad;
     private Button mBtnShow;
