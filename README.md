@@ -1,10 +1,14 @@
 ## Overview
 
-This SDK is provided as an Android Library project that can be included in your application using Gradle or as an .aar library.
+Our unique ad formats are loved by users and earn more money from advertisers, enhancing your app and earning you more at the same time. 
+
+Simply integrate our SDK and start making money today.
+
+The SDK is provided as an Android Library project that can be included in your application using Gradle or as an .aar library.
 
 ## Requirements
 
-The Samba SDK requires Android 4.4 (Android API level 19+) and upwards. In the event you attempt to use the Samba SDK on a device with an Android OS lower than 4.4,the Samba instance will be null.
+The Samba SDK requires Android 4.4 (Android API level 19+) and upwards. In the event you attempt to use the Samba SDK on a device with an Android OS lower than 4.4, the Samba instance will be null.
 
 ## Let's get started
 
