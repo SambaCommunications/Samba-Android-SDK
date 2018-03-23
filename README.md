@@ -41,7 +41,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-        Samba.init(publisherId, secretKey, userId);
+        Samba.init("YourPublisherId", "YourSecretKey", "UserId");
     }
 }
 ```
@@ -86,7 +86,7 @@ The following configurations are available:
 You are almost ready to play the first ad.
 Get the Samba instance by calling method ```getInstance``` in Samba class and passing the activity context.
 ```
- mSamba=SambaAd.getInstance(FirstActivity.this);
+ mSamba = SambaAd.getInstance(FirstActivity.this);
  ```
  
 After this you must call the ```loadAd()``` method and after receiving successful load response, call the ```playAd()``` method. You can listen to the result of the load method by registering the **SambaEventListener** on the Samba instance and listening for **AdLoadedSuccess** and **AdLoadedFailed** events.
@@ -104,7 +104,7 @@ private Samba mSamba;
    super.onCreate(savedInstanceState);
    setContentView(R.layout.activity_main);
   
-   mSamba=SambaAd.getInstance(FirstActivity.this);
+   mSamba = SambaAd.getInstance(FirstActivity.this);
    mSamba.setSambaAdListener(createSambaListener());
    mSamba.loadAd();
  }
