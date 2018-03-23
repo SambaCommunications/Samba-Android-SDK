@@ -4,7 +4,7 @@
 
 Our unique ad formats are loved by users and earn more money from advertisers, enhancing your app and earning you more at the same time. 
 
-Simply integrate our SDK and start making money today.
+Simply integrate our SDK and get started today.
 
 The SDK is provided as an Android Library project that can be included in your application using Gradle or as an .aar library.
 
