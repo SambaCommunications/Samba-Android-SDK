@@ -95,9 +95,9 @@ Get the Samba instance by calling method ```getInstance``` on Samba class by pas
  samba = SambaAd.getInstance(SampleAdActivity.this);
  ```
  
-After this you must call the ```loadAd()``` method and after receiving a successful load response, call ```playAd()``` method. You can listen to loadAd method result by registering a **SambaEventListener** on Samba instance and listening for **AdLoadedSuccess** and **AdLoadedFailed** events.
+After this you must call the ```loadAd()``` method and after receiving a successful load response, call ```playAd()``` method. You can listen to loadAd method result by registering a **SambaListener** on Samba instance and listening for **adLoadedSuccess** and **adLoadedFailed** events.
 
-Once **AdLoadedSuccess** has been called, you can call the ```playAd()``` method.
+Once **adLoadedSuccess** has been called, you can call the ```playAd()``` method.
 
 ```
 import com.samba.Samba;
@@ -138,8 +138,6 @@ samba.isAdLoading()
 
 samba.isAdLoaded()
 
-samba.isAdReady()
-
 samba.isAdShowing()
 
 ### OnDestroy
@@ -155,7 +153,7 @@ protected void onDestroy() {
 
 ### AdListener events
 
-Above is an example of creating a **SambaEventListener** object and registering it to the SambaAd object. The following events are triggered:
+Above is an example of creating a **SambaListener** object and registering it to the SambaAd object. The following events are triggered:
 
 |**Event**|**Mandatory implementation**|**Description**|
 |---------|----------------------------|---------------|
@@ -163,9 +161,11 @@ Above is an example of creating a **SambaEventListener** object and registering 
 | onAdLoadFail(String error) | true | Triggered when an ad can't be loaded. The cause is returned in the error message. |
 | onAdStarted | false | Triggered when an ad starts playing. |
 | onAdShowFailed(String error) | false | Triggered when an ad fails to display on screen. The cause is returned in the error message. |
-| onAdDidReachEnd | false | Triggered when an ad reaches completion. |
+| onAdDidReachEnd(boolean wasSuccessfulView) | false | Triggered when an ad video reaches completion. The wasSuccessfulView indicates if the ad was viewed until the end by the user or not. A case when wasSuccessfulView can be false is when the user skips the video. |
 | onAdClicked | false | Triggered when the user clicks the video ad screen. |
 | onLeaveApp | false | Triggered when leaving the app. (e.g. if the user opens a web page in the native browser from the SDK or clicks a "mailTo" link). |
+| onAgeRestrictionNotMet | false | Triggered when an ad can't be played because the age restriction is not met. |
+| onAdDismissed | false | Triggered at the end, when the entire add display process finishes and the ad screen is closed. |
 
 ### NOTE
 
