@@ -44,7 +44,7 @@ public class AdActivity extends AppCompatActivity {
 
    SambaSetup sambaSetup = new SambaSetup("YourPublisherId", "YourSecretKey", "UserId");
    Samba.init(sambaSetup, AdActivity.this);
-    }
+  }
 }
 ```
 
