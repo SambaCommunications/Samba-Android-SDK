@@ -6,7 +6,9 @@ Our unique ad formats are loved by users and earn more money from advertisers, e
 
 Simply integrate our SDK and get started today.
 
-The SDK is provided as an Android Library project that can be included in your application using Gradle or as an .aar library.
+The SDK is provided as an Android Library project that can be included in your application as an .aar library. The latest aar file, versio **0.0.1**, can be found in folder **samba-sdk**.
+
+In the near future we plan to distribute the SKD as a Gradle dependency too.
 
 ## Requirements
 
@@ -43,7 +45,7 @@ public class AdActivity extends AppCompatActivity {
    setContentView(R.layout.activity_ad);
 
    SambaSetup sambaSetup = new SambaSetup("YourPublisherId", "YourSecretKey", "UserId");
-   Samba.init(sambaSetup, this);
+   Samba.init(sambaSetup, AdActivity.this);
   }
 }
 ```
@@ -82,7 +84,7 @@ The following configurations are available:
 | setGender |	null | Sets the user gender. It is used to retrieve Samba ads.  Available options are: 'M' or 'F' (optional parameter). |
 | setAdOrientation |	null | Sets the desired orientation when playing an ad. If the value is null or MATCH_VIDEO, the orientation will be determined by the video itself. Available options are: LANDSCAPE, PORTRAIT, AUTO or MATCH_VIDEO. |
 | setSoundDisabled |	false | Enables or disables ads sound (sound on or sound off). The default option for sound is enabled. |
-| optimizeDownloadOnMobileNetwork | false | Sets whether the mobile data should be used for pre-caching the video ads or not. If set to true, ads will not be precached on mobile data. |
+| optimizeDownloadOnMobileNetwork | false | Sets whether the sdk should optimize mobile data usage. More exactl, it sets if mobile data should be used for pre-caching ad videos or not. If set to true, ad videos will not be pre-cached on mobile data. |
 
 
 ### Sample ad activity
@@ -90,7 +92,7 @@ The following configurations are available:
 You are almost ready to play the first ad.
 Get the Samba instance by calling method ```getInstance``` on Samba class by passing the activity context.
 ```
- mSamba = SambaAd.getInstance(SampleAdActivity.this);
+ samba = SambaAd.getInstance(SampleAdActivity.this);
  ```
  
 After this you must call the ```loadAd()``` method and after receiving a successful load response, call ```playAd()``` method. You can listen to loadAd method result by registering a **SambaEventListener** on Samba instance and listening for **AdLoadedSuccess** and **AdLoadedFailed** events.
@@ -101,16 +103,16 @@ Once **AdLoadedSuccess** has been called, you can call the ```playAd()``` method
 import com.samba.Samba;
 
 public class SampleAdActivity extends AppCompatActivity {
-private Samba mSamba;
+private Samba samba;
 
  @Override
  protected void onCreate(Bundle savedInstanceState) {
    super.onCreate(savedInstanceState);
    setContentView(R.layout.activity_main);
   
-   mSamba = SambaAd.getInstance(SampleAdActivity.this);
-   mSamba.setSambaAdListener(createSambaListener());
-   mSamba.loadAd();
+   samba = SambaAd.getInstance(SampleAdActivity.this);
+   samba.setSambaAdListener(createSambaListener());
+   samba.loadAd();
  }
 
 private SambaListener createSambaListener() {
@@ -118,8 +120,8 @@ private SambaListener createSambaListener() {
         @Override
         public void onAdLoadSuccess() {
              //Unnecesary check method. Used as an example here.
-             if (mSamba.isAdLoaded()) {
-                 mSamba.showAd();
+             if (samba.isAdLoaded()) {
+                 samba.showAd();
              }
         }
 
