@@ -27,7 +27,7 @@ dependencies {
 
 ## Let's get to the code
 
-In order to connect to our system you will need a publisherId and a secretKey. Please contact your SambaNetworks Account Manager or contact us at sales@sambanetworks.com in order to get these. 
+In order to connect to our system you will need a **publisherId** and a **secretKey**. Please contact your SambaNetworks Account Manager or contact us at sales@sambanetworks.com in order to get these. 
 
 To properly initialize the Samba SDK you need to create an instance of the **SambaSetup** object and provide the publisherId, the secretKey and a userId. After this you need to call the ```init()``` method and pass the SambaSetup instance and the activity context.
 
@@ -50,12 +50,11 @@ public class AdActivity extends AppCompatActivity {
 
 Note: If you create the **SambaSetup** object with an incorrect **publisherId**, **secretKey** or **userId**, the Samba SDK will initialize, but when calling ```loadAd()```, the **onAdLoadFail()** event will probably be fired with the error message **No content**.
 
-Each time a new publisherId, secretKey or userId is used, the init method must be called in order to ensure the correct setup.
+In case the userId changes, the init method must be called again, in order to ensure the correct setup.
 
 ### Samba configuration 
 
-The SDK offers access to the **SambaConfig** class in order to change various SDK settings. This method can be called before or after calling the ```init``` method. The settings will be applied before loading and playing ads.
-The values for **publisherId**, **secretKey** and **userId** will be provided by Samba.
+The SDK offers access to the **SambaConfig** class in order to change various SDK settings. **SambaConfig** methods can be called before or after calling the ```init``` method. The settings will be applied before loading and playing new ads.
 
 ```
 import com.samba.SambaConfig;
