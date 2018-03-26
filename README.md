@@ -78,24 +78,24 @@ The following configurations are available:
 
 |Method	| Default value |                 	Description                                     |
 |---------|---------------|------------------------------------------------------------------|
-|setAge   |	      null    	 |Sets the age used to retrieve Samba ads (optional parameter).|
-|setGender|	null	|Sets the gender used to retrieve Samba ads.  Available options are: 'M' or 'F' (optional parameter).|
-|setAdOrientation|	null	|Sets the desired orientation when playing the ad. If the value is null or MATCH_VIDEO, the orientation will be determined by the video itself. Available options are: LANDSCAPE, PORTRAIT, AUTO or MATCH_VIDEO.|
-|setSoundDisabled |	false | Sets the sound value (sound on or sound off). The default option for sound is enabled.|
-|optimizeDownloadOnMobileNetwork|	false |	Sets whether the mobile network should be used for downloading the video ads.|
+| setAge | null | Sets the user age. It is used to retrieve Samba ads (optional parameter). |
+| setGender |	null | Sets the user gender. It is used to retrieve Samba ads.  Available options are: 'M' or 'F' (optional parameter). |
+| setAdOrientation |	null | Sets the desired orientation when playing an ad. If the value is null or MATCH_VIDEO, the orientation will be determined by the video itself. Available options are: LANDSCAPE, PORTRAIT, AUTO or MATCH_VIDEO. |
+| setSoundDisabled |	false | Enables or disables ads sound (sound on or sound off). The default option for sound is enabled. |
+| optimizeDownloadOnMobileNetwork | false | Sets whether the mobile data should be used for pre-caching the video ads or not. If set to true, ads will not be precached on mobile data. |
 
 
 ### Sample ad activity
 
 You are almost ready to play the first ad.
-Get the Samba instance by calling method ```getInstance``` in Samba class and passing the activity context.
+Get the Samba instance by calling method ```getInstance``` on Samba class by passing the activity context.
 ```
  mSamba = SambaAd.getInstance(SampleAdActivity.this);
  ```
  
-After this you must call the ```loadAd()``` method and after receiving successful load response, call the ```playAd()``` method. You can listen to the result of the load method by registering the **SambaEventListener** on the Samba instance and listening for **AdLoadedSuccess** and **AdLoadedFailed** events.
+After this you must call the ```loadAd()``` method and after receiving a successful load response, call ```playAd()``` method. You can listen to loadAd method result by registering a **SambaEventListener** on Samba instance and listening for **AdLoadedSuccess** and **AdLoadedFailed** events.
 
-Once **AdLoadedSuccess** has been returned, you can call the ```playAd()``` method. Additional methods for returning loading status are **isAdLoaded** and **isAdLoading** which are called using the Samba instance.
+Once **AdLoadedSuccess** has been called, you can call the ```playAd()``` method.
 
 ```
 import com.samba.Samba;
@@ -118,10 +118,9 @@ private SambaListener createSambaListener() {
         @Override
         public void onAdLoadSuccess() {
              //Unnecesary check method. Used as an example here.
-             if(mSamba.isAdLoaded())
-                {
-                mSamba.showAd();
-                }
+             if (mSamba.isAdLoaded()) {
+                 mSamba.showAd();
+             }
         }
 
         @Override
@@ -131,9 +130,11 @@ private SambaListener createSambaListener() {
     };
 }}
 ```
-If you would like to check the status of the ad the following methods are available.
+If you would like to check the status of the ad, the following methods are available:
 
 samba.isAdLoading()
+
+samba.isAdLoaded()
 
 samba.isAdReady()
 
@@ -156,13 +157,13 @@ Above is an example of creating a **SambaEventListener** object and registering 
 
 |**Event**|**Mandatory implementation**|**Description**|
 |---------|----------------------------|---------------|
-|onAdLoadSuccess|	true	|Triggered when an ad is loaded successfully.|
-|onAdLoadFail(String error)|	true	|Triggered when an ad is not loaded. The cause error message is returned.|
-|onAdStarted |false|	Triggered when an ad starts playing.|
-|onAdShowFailed(String error)|	false	|Triggered when an ad fails to display on screen. The cause error message is returned.|
-|onAdDidReachEnd|	false	|Triggered when an ad reaches completion.|
-|onAdClicked|	false|	Triggered when the user clicks the video ad screen.
-|onLeaveApp|	false	|Triggered when leaving the app. (e.g. if the user opens a web page in the native browser from the SDK or clicks a "mailTo" link)|
+| onAdLoadSuccess | true | Triggered when an ad is loaded successfully. |
+| onAdLoadFail(String error) | true | Triggered when an ad can't be loaded. The cause is returned in the error message. |
+| onAdStarted | false | Triggered when an ad starts playing. |
+| onAdShowFailed(String error) | false | Triggered when an ad fails to display on screen. The cause is returned in the error message. |
+| onAdDidReachEnd | false | Triggered when an ad reaches completion. |
+| onAdClicked | false | Triggered when the user clicks the video ad screen. |
+| onLeaveApp | false | Triggered when leaving the app. (e.g. if the user opens a web page in the native browser from the SDK or clicks a "mailTo" link). |
 
 ### NOTE
 
