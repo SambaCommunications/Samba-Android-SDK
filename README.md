@@ -43,7 +43,7 @@ public class AdActivity extends AppCompatActivity {
    setContentView(R.layout.activity_ad);
 
    SambaSetup sambaSetup = new SambaSetup("YourPublisherId", "YourSecretKey", "UserId");
-   Samba.init(sambaSetup, AdActivity.this);
+   Samba.init(sambaSetup, this);
   }
 }
 ```
