@@ -8,7 +8,7 @@ Simply integrate our SDK and get started today.
 
 The SDK is provided as an Android Library project that can be included in your application as an .aar library. The latest aar file, versio **0.0.1**, can be found in folder **samba-sdk**.
 
-In the near future we plan to distribute the SKD as a Gradle dependency too.
+In the near future we plan to distribute the SDK as a Gradle dependency too.
 
 ## Requirements
 
