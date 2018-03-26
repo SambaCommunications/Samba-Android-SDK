@@ -29,24 +29,26 @@ dependencies {
 
 In order to connect to our system you will need a publisherId and a secretKey. Please contact your SambaNetworks Account Manager or contact us at sales@sambanetworks.com in order to get these. 
 
-To properly initialize the Samba SDK you need to call the init method either in the Application class or in the first activity. 
+To properly initialize the Samba SDK you need to create an instance of the **SambaSetup** object and provide the publisherId, the secretKey and a userId. After this you need to call the ```init()``` method and pass the SambaSetup instance and the activity context.
 
 
 ```
-import android.app.Application;
 import com.samba.SambaAd;
 
-public class App extends Application {
-    @Override
-    public void onCreate() {
-        super.onCreate();
+public class AdActivity extends AppCompatActivity {
 
-        Samba.init("YourPublisherId", "YourSecretKey", "UserId");
+  @Override
+ protected void onCreate(Bundle savedInstanceState) {
+   super.onCreate(savedInstanceState);
+   setContentView(R.layout.activity_ad);
+
+   SambaSetup sambaSetup = new SambaSetup("YourPublisherId", "YourSecretKey", "UserId");
+   Samba.init(sambaSetup, AdActivity.this);
     }
 }
 ```
 
-Note: If you call the ```init``` method with an incorrect **publisherId**, **secretKey** or **userId**, the Samba SDK will initialize, but when calling ```loadAd()```, the **onAdLoadFail()** event will probably be fired with the error message **No content**.
+Note: If you create the **SambaSetup** object with an incorrect **publisherId**, **secretKey** or **userId**, the Samba SDK will initialize, but when calling ```loadAd()```, the **onAdLoadFail()** event will probably be fired with the error message **No content**.
 
 Each time a new publisherId, secretKey or userId is used, the init method must be called in order to ensure the correct setup.
 
@@ -57,12 +59,15 @@ The values for **publisherId**, **secretKey** and **userId** will be provided by
 
 ```
 import com.samba.SambaConfig;
-public class MainActivity extends AppCompatActivity {
+public class AdActivity extends AppCompatActivity {
 
  @Override
  protected void onCreate(Bundle savedInstanceState) {
    super.onCreate(savedInstanceState);
    setContentView(R.layout.activity_main);
+   
+   SambaSetupe sambaSetup = new SambaSetup("YourPublisherId", "YourSecretKey", "UserId");
+   Samba.init(sambaSetup, AdActivity.this);
 
    SambaConfig.useMobileNetworkForCaching(false);
    SambaConfig.setPrecachingAllowed(false);
@@ -86,7 +91,7 @@ The following configurations are available:
 You are almost ready to play the first ad.
 Get the Samba instance by calling method ```getInstance``` in Samba class and passing the activity context.
 ```
- mSamba = SambaAd.getInstance(FirstActivity.this);
+ mSamba = SambaAd.getInstance(SampleAdActivity.this);
  ```
  
 After this you must call the ```loadAd()``` method and after receiving successful load response, call the ```playAd()``` method. You can listen to the result of the load method by registering the **SambaEventListener** on the Samba instance and listening for **AdLoadedSuccess** and **AdLoadedFailed** events.
@@ -104,7 +109,7 @@ private Samba mSamba;
    super.onCreate(savedInstanceState);
    setContentView(R.layout.activity_main);
   
-   mSamba = SambaAd.getInstance(FirstActivity.this);
+   mSamba = SambaAd.getInstance(SampleAdActivity.this);
    mSamba.setSambaAdListener(createSambaListener());
    mSamba.loadAd();
  }
