@@ -6,7 +6,7 @@ Our unique ad formats are loved by users and earn more money from advertisers, e
 
 Simply integrate our SDK and get started today.
 
-The SDK is provided as an Android Library project that can be included in your application as an .aar library. The latest aar file, versio **0.0.1**, can be found in folder **samba-sdk**.
+The SDK is provided as an Android Library project that can be included in your application as an .aar library. The latest aar file, versio **0.0.2**, can be found in folder **samba-sdk**.
 
 In the near future we plan to distribute the SDK as a Gradle dependency too.
 
