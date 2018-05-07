@@ -1,5 +1,11 @@
 # Samba SDK
 
+## 0.0.3
+
+### Features
+  * Added waterfall implementation for ad in jwplayer
+  * Added autoplay implementation for ads in jwplayer
+
 ## 0.0.2
 
 ### Features
