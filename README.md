@@ -84,7 +84,7 @@ The following configurations are available:
 | setGender |	null | Sets the user gender. It is used to retrieve Samba ads.  Available options are: 'M' or 'F' (optional parameter). |
 | setAdOrientation |	null | Sets the desired orientation when playing an ad. If the value is null or MATCH_VIDEO, the orientation will be determined by the video itself. Available options are: LANDSCAPE, PORTRAIT, AUTO or MATCH_VIDEO. |
 | setSoundDisabled |	false | Enables or disables ads sound (sound on or sound off). The default option for sound is enabled. |
-| optimizeDownloadOnMobileNetwork | false | Sets whether the sdk should optimize mobile data usage. More exactl, it sets if mobile data should be used for pre-caching ad videos or not. If set to true, ad videos will not be pre-cached on mobile data. |
+| optimizeDownloadOnMobileNetwork | false | Sets whether the sdk should optimize mobile data usage. More exactly, it sets if mobile data should be used for pre-caching ad videos or not. If set to true, ad videos will not be pre-cached on mobile data. |
 
 
 ### Sample ad activity
